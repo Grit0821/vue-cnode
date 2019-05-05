@@ -1,6 +1,6 @@
 <template>
   <!--组件只能有一个根元素-->
-  <div class="article">
+  <div class="article markdown-body">
     <!--如果正在加载，显示此div-->
     <div class="loading" v-if="isLoading">
       <img src="../assets/loading.gif">
@@ -72,7 +72,7 @@
 <style >
   /*引入外部markdown语法的css文件*/
   /*如果需要css样式对所有页面都生效，需要在<script>上去掉scoped*/
-  @import url('../assets/markdown-github.css');
+  @import url('https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.min.css');
   .topbar {
     padding: 10px;
     background-color: #f6f6f6;
@@ -150,5 +150,12 @@
 
   .markdown-text img {
     width: 92% !important;
+  }
+  .markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
   }
 </style>
